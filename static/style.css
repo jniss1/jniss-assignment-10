@@ -1,0 +1,163 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #000000, #ffffff); /* Elegant gradient background */
+    color: #e6e6e6;
+    line-height: 1.7;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    background-color: rgba(255, 255, 255, 0.95); /* Soft white with slight transparency */
+    padding: 30px;
+    border-radius: 8px; /* Slightly smaller border radius for a refined look */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Subtle shadow for form */
+    margin-bottom: 50px;
+    max-width: 600px; /* Form centered with max-width */
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-8px); /* Elevate the form on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Inputs & Buttons */
+input[type="text"], 
+input[type="file"], 
+input[type="range"] {
+    width: 90%; /* Make inputs slightly smaller */
+    padding: 12px; /* Adjust padding */
+    border: 2px solid #bfa77f; /* Subtle gold border */
+    border-radius: 6px; /* Slightly less rounded */
+    font-size: 1.1em;
+    color: #333; /* Darker text for better readability */
+    background-color: #f7f7f7; /* Soft light gray background */
+    margin-bottom: 18px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="text"]:focus, 
+input[type="file"]:focus, 
+input[type="range"]:focus {
+    border-color: #bfa77f; /* Light gold focus */
+    background-color: #fff7e6; /* Very light golden tint */
+    outline: none;
+}
+
+button {
+    background-color: #bfa77f; /* Soft gold background */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    width: 90%; /* Make button slightly smaller */
+    font-size: 1.2em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #a68963; /* Slightly darker gold on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow for hover effect */
+    transform: scale(1.05); /* Subtle scale effect */
+}
+
+/* Result Grid */
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Result Item */
+.result-item {
+    border-radius: 8px; /* Slightly less rounded */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.result-item:hover {
+    transform: translateY(-10px); /* Elevation effect */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Increase font size for top 5 results text */
+.result-item p.similarity, 
+.result-item .weight-display {
+    font-size: 1.5em; /* Larger text for similarity and weight */
+    font-weight: bold;
+    color: #d1d1d1; /* Light gray for similarity */
+    line-height: 1.6;
+}
+
+/* Image Display */
+.result-item img {
+    max-width: 300px; /* Ensure the images stay smaller */
+    height: 300px; /* Fix height to make them perfectly circular */
+    object-fit: cover; /* Ensures images maintain aspect ratio */
+    border-radius: 80%; /* Circular images */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 15px; /* Add space between image and text */
+}
+
+.result-item img:hover {
+    transform: scale(1.1) rotate(10deg); /* Slight zoom and rotation effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+    filter: brightness(1.1) saturate(1.5) sepia(1.5); /* Gold tint on hover */
+}
+
+/* Weight display styling */
+.weight-display {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #bfa77f; /* Soft gold for the weight text */
+    margin-top: 20px;
+}
+
+/* Hover Effects */
+input[type="text"]:hover, 
+input[type="file"]:hover, 
+input[type="range"]:hover {
+    border-color: #bfa77f; /* Light gold border on hover */
+    background-color: #fff7e6; /* Soft golden tint */
+}
+
+/* Button glow effect */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #bfa77f, 0 0 20px #bfa77f, 0 0 30px #bfa77f; }
+    50% { text-shadow: 0 0 30px #bfa77f, 0 0 50px #bfa77f, 0 0 70px #bfa77f; }
+    100% { text-shadow: 0 0 10px #bfa77f, 0 0 20px #bfa77f, 0 0 30px #bfa77f; }
+}
+
+button {
+    animation: glow 2s ease-in-out infinite alternate; /* Soft gold glow on button */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Apply bounce animation to result items */
+.result-item:hover {
+    animation: bounce 0.5s ease-in-out; /* Fun bounce animation */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
